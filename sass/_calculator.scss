@@ -1,67 +1,197 @@
+@use "variables" as v;
+
 .calculator {
+  background-color: v.$white;
+  padding: v.$spacing-400 v.$spacing-300;
+  border-radius: v.$spacing-300 v.$spacing-300 0 0;
+
   &__bill-container {
   }
 
   &__result-container {
+    margin-top: v.$spacing-400;
+    background-color: v.$green-900;
+    padding: v.$spacing-300;
+    border-radius: v.$spacing-200;
   }
 }
 
 .bill {
   &__group {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-100;
   }
 
   &__label {
+    @include v.text-preset-5;
+    color: v.$grey-500;
+  }
+
+  &__group-input {
+    position: relative;
+    width: 100%;
+  }
+
+  &__input-symbol {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__input {
+    @include v.text-preset-3;
+    background-color: v.$grey-50;
+    border: none;
+    padding: v.$spacing-100;
+    width: 100%;
+    text-align: right;
+    color: v.$green-900;
+    border-radius: 0.5rem;
+
+    &:focus {
+      outline: none;
+      border: 3px solid v.$green-400;
+    }
   }
 }
 
 .tip {
   &__container {
+    margin-top: v.$spacing-400;
   }
 
   &__text {
+    @include v.text-preset-5;
+    color: v.$grey-500;
   }
 
   &__options {
+    margin-top: v.$spacing-100;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$spacing-200;
   }
 
   &__button {
+    @include v.text-preset-3;
+    background-color: v.$green-900;
+    color: v.$white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: v.$spacing-100;
+    cursor: pointer;
+
+    &:hover {
+      background-color: v.$green-400;
+      color: v.$green-900;
+    }
+
+    &--active {
+      background-color: v.$green-400;
+      color: v.$green-900;
+    }
+
     &--custom {
+      background-color: v.$grey-50;
+      color: v.$grey-550;
     }
   }
 }
 
 .people {
   &__group {
+    margin-top: v.$spacing-400;
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-100;
   }
 
   &__label {
+    @include v.text-preset-5;
+    color: v.$grey-500;
+  }
+
+  &__group-input {
+    position: relative;
+    width: 100%;
+  }
+
+  &__input-symbol {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__input {
+    @include v.text-preset-3;
+    background-color: v.$grey-50;
+    border: none;
+    padding: v.$spacing-100;
+    width: 100%;
+    text-align: right;
+    color: v.$green-900;
+    border-radius: 0.5rem;
+
+    &:focus {
+      outline: none;
+      border: 3px solid v.$green-400;
+    }
+
+    &:invalid {
+      outline: none;
+      border: 3px solid v.$orange-400;
+    }
   }
 }
 
 .result {
   &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-300;
   }
 
   &__text-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__text {
+    @include v.text-preset-5;
+    color: v.$white;
+
     &--sub {
+      color: v.$grey-400;
+      display: block;
     }
   }
 
   &__value {
+    @include v.text-preset-2;
+    color: v.$green-400;
   }
 
   &__button-container {
+    margin-top: v.$spacing-400;
   }
 
   &__button {
+    @include v.text-preset-4;
+    width: 100%;
+    padding: v.$spacing-100;
+    background-color: v.$green-400;
+    color: v.$green-900;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: v.$green-200;
+      color: v.$green-900;
+    }
   }
 }

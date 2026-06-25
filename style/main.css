@@ -10,7 +10,205 @@ html {
 
 body {
   background-color: #c5e4e7;
-  min-height: 100vh;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.4rem 0;
+}
+.logo__img {
+  width: 8rem;
+  height: 6rem;
+}
+
+.calculator {
+  background-color: #fff;
+  padding: 3.2rem 2.4rem;
+  border-radius: 2.4rem 2.4rem 0 0;
+}
+.calculator__result-container {
+  margin-top: 3.2rem;
+  background-color: #00474b;
+  padding: 2.4rem;
+  border-radius: 1.6rem;
+}
+
+.bill__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.bill__label {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #5e7a7d;
+}
+.bill__group-input {
+  position: relative;
+  width: 100%;
+}
+.bill__input-symbol {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bill__input {
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  background-color: #f3f9fa;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  text-align: right;
+  color: #00474b;
+  border-radius: 0.5rem;
+}
+.bill__input:focus {
+  outline: none;
+  border: 3px solid #26c2ae;
+}
+
+.tip__container {
+  margin-top: 3.2rem;
+}
+.tip__text {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #5e7a7d;
+}
+.tip__options {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+.tip__button {
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  background-color: #00474b;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+.tip__button:hover {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+.tip__button--active {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+.tip__button--custom {
+  background-color: #f3f9fa;
+  color: #547878;
+}
+
+.people__group {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.people__label {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #5e7a7d;
+}
+.people__group-input {
+  position: relative;
+  width: 100%;
+}
+.people__input-symbol {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.people__input {
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  background-color: #f3f9fa;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  text-align: right;
+  color: #00474b;
+  border-radius: 0.5rem;
+}
+.people__input:focus {
+  outline: none;
+  border: 3px solid #26c2ae;
+}
+.people__input:invalid {
+  outline: none;
+  border: 3px solid #e17052;
+}
+
+.result__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.result__text-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.result__text {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #fff;
+}
+.result__text--sub {
+  color: #7f9d9f;
+  display: block;
+}
+.result__value {
+  font-family: "Space Mono", monospace;
+  font-size: 3.2rem;
+  font-weight: bold;
+  letter-spacing: -0.67px;
+  color: #26c2ae;
+}
+.result__button-container {
+  margin-top: 3.2rem;
+}
+.result__button {
+  font-family: "Space Mono", monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #26c2ae;
+  color: #00474b;
+  border: none;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.result__button:hover {
+  background-color: #9fe8df;
+  color: #00474b;
 }
 
 /*# sourceMappingURL=main.css.map */

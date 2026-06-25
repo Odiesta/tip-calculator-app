@@ -12,5 +12,20 @@ html {
 
 body {
   background-color: v.$grey-200;
-  min-height: 100vh;
+}
+
+.container {
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: v.$spacing-300 0;
+
+  &__img {
+    width: 8rem;
+    height: 6rem;
+  }
 }
