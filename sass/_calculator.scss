@@ -5,6 +5,25 @@
   padding: v.$spacing-400 v.$spacing-300;
   border-radius: v.$spacing-300 v.$spacing-300 0 0;
 
+  @media screen and (min-width: 48rem) {
+    max-width: 60rem;
+    margin: v.$spacing-400 auto v.$spacing-600;
+    border-radius: v.$spacing-300;
+  }
+
+  @media screen and (min-width: 64rem) {
+    max-width: 90rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$spacing-600;
+    padding: v.$spacing-400;
+  }
+
+  @media screen and (min-width: 80rem) {
+    max-width: 100rem;
+  }
+
   &__bill-container {
   }
 
@@ -13,6 +32,13 @@
     background-color: v.$green-900;
     padding: v.$spacing-300;
     border-radius: v.$spacing-200;
+
+    @media screen and (min-width: 64rem) {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -72,6 +98,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: v.$spacing-200;
+
+    @media screen and (min-width: 48rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__button {
@@ -172,6 +202,10 @@
   &__value {
     @include v.text-preset-2;
     color: v.$green-400;
+
+    @media screen and (min-width: 64rem) {
+      @include v.text-preset-1;
+    }
   }
 
   &__button-container {
