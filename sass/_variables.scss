@@ -1,0 +1,68 @@
+$white: #fff;
+$black: #000;
+$grey-600: #3d6666;
+$grey-550: #547878;
+$grey-500: #5e7a7d;
+$grey-400: #7f9d9f;
+$grey-300: #9ebbbd;
+$grey-200: #c5e4e7;
+$grey-50: #f3f9fa;
+$green-900: #00474b;
+$green-800: #085c61;
+$green-750: #0d686d;
+$green-400: #26c2ae;
+$green-200: #9fe8df;
+$orange-400: #e17052;
+
+@mixin text-preset-1 {
+  font-family: "Space Mono", monospace;
+  font-size: 4.8rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+@mixin text-preset-2 {
+  font-family: "Space Mono", monospace;
+  font-size: 3.2rem;
+  font-weight: bold;
+  letter-spacing: -0.67px;
+}
+
+@mixin text-preset-3 {
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-4 {
+  font-family: "Space Mono", monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-5 {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-6 {
+  font-family: "Space Mono", monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+$spacing-0: 0;
+$spacing-100: 0.8rem;
+$spacing-200: 1.6rem;
+$spacing-300: 2.4rem;
+$spacing-400: 3.2rem;
+$spacing-600: 4.8rem;
+$spacing-1000: 8rem;
+$spacing-1200: 9.6rem;
+$spacing-1500: 12rem;
+$spacing-1600: 12.8rem;

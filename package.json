@@ -1,0 +1,13 @@
+{
+  "name": "tip-calculator-app",
+  "version": "1.0.0",
+  "description": "![Design preview for the Tip calculator app coding challenge](./preview.jpg)",
+  "license": "ISC",
+  "author": "Odiesta",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "sass --watch sass/main.scss:style/main.css"
+  }
+}
