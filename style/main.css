@@ -104,7 +104,7 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   background-color: #f3f9fa;
-  border: none;
+  border: 3px solid transparent;
   padding: 0.8rem;
   width: 100%;
   text-align: right;
@@ -153,13 +153,73 @@ body {
   background-color: #26c2ae;
   color: #00474b;
 }
+.tip__button--custom {
+  background-color: #f3f9fa;
+  color: #547878;
+}
 .tip__button--active {
   background-color: #26c2ae;
   color: #00474b;
 }
-.tip__button--custom {
+.tip__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  grid-column: 1/span 2;
+}
+@media screen and (min-width: 48rem) {
+  .tip__group {
+    grid-column: 1/span 3;
+  }
+}
+.tip__group--hidden {
+  display: none;
+}
+.tip__label {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #5e7a7d;
+}
+.tip__group-input {
+  position: relative;
+  width: 100%;
+}
+.tip__input {
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
   background-color: #f3f9fa;
-  color: #547878;
+  border: 3px solid transparent;
+  padding: 0.8rem 3.2rem 0.8rem 0.8rem;
+  width: 100%;
+  text-align: right;
+  color: #00474b;
+  border-radius: 0.5rem;
+}
+.tip__input:focus {
+  outline: none;
+  border: 3px solid #26c2ae;
+}
+.tip__input::-webkit-inner-spin-button, .tip__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.tip__input[type=number] {
+  -moz-appearance: textfield;
+}
+.tip__input-percent {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #00474b;
 }
 
 .people__group {
@@ -191,7 +251,7 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   background-color: #f3f9fa;
-  border: none;
+  border: 3px solid transparent;
   padding: 0.8rem;
   width: 100%;
   text-align: right;
