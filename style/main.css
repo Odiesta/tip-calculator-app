@@ -77,8 +77,8 @@ body {
 }
 
 .bill__group {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "label-bill error-bill" "input-bill input-bill";
   gap: 0.8rem;
 }
 .bill__label {
@@ -87,10 +87,12 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   color: #5e7a7d;
+  grid-area: label-bill;
 }
 .bill__group-input {
   position: relative;
   width: 100%;
+  grid-area: input-bill;
 }
 .bill__input-symbol {
   position: absolute;
@@ -114,6 +116,22 @@ body {
 .bill__input:focus {
   outline: none;
   border: 3px solid #26c2ae;
+}
+.bill__input--error {
+  border: 3px solid #e17052;
+}
+.bill__error {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #e17052;
+  grid-area: error-people;
+  justify-self: end;
+  grid-area: error-bill;
+}
+.bill__error--hidden {
+  display: none;
 }
 
 .tip__container {
@@ -162,10 +180,9 @@ body {
   color: #00474b;
 }
 .tip__group {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 0.8rem;
-  grid-column: 1/span 2;
+  grid-template-areas: "label-tip error-tip" "input-tip input-tip";
 }
 @media screen and (min-width: 48rem) {
   .tip__group {
@@ -181,10 +198,12 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   color: #5e7a7d;
+  grid-area: label-tip;
 }
 .tip__group-input {
   position: relative;
   width: 100%;
+  grid-area: input-tip;
 }
 .tip__input {
   font-family: "Space Mono", monospace;
@@ -210,6 +229,9 @@ body {
 .tip__input[type=number] {
   -moz-appearance: textfield;
 }
+.tip__input--error {
+  border: 3px solid #e17052;
+}
 .tip__input-percent {
   position: absolute;
   right: 1.2rem;
@@ -221,11 +243,23 @@ body {
   letter-spacing: 0;
   color: #00474b;
 }
+.tip__error {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #e17052;
+  grid-area: error-tip;
+  justify-self: end;
+}
+.tip__error--hidden {
+  display: none;
+}
 
 .people__group {
   margin-top: 3.2rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "label-people error-people" "input-people input-people";
   gap: 0.8rem;
 }
 .people__label {
@@ -234,10 +268,12 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   color: #5e7a7d;
+  grid-area: label-people;
 }
 .people__group-input {
   position: relative;
   width: 100%;
+  grid-area: input-people;
 }
 .people__input-symbol {
   position: absolute;
@@ -265,6 +301,18 @@ body {
 .people__input:invalid {
   outline: none;
   border: 3px solid #e17052;
+}
+.people__error {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #e17052;
+  grid-area: error-people;
+  text-align: right;
+}
+.people__error--hidden {
+  display: none;
 }
 
 .result__wrapper {

@@ -46,6 +46,9 @@ const totalPerPerson = document.getElementById("totalPerPerson");
 const resetButton = document.getElementById("reset__button");
 const tipInput = document.getElementById("tip__input");
 const tipGroup = document.getElementById("tip__group");
+const tipError = document.getElementById("tip__error");
+const billError = document.getElementById("bill__error");
+const peopleError = document.getElementById("people__error");
 
 let billValue = 0;
 let tipPercentage = 0.15;
@@ -64,10 +67,9 @@ const calculate = () => {
   }
   let tip = (billValue * tipPercentage) / peopleCount;
   let total = (billValue + billValue * tipPercentage) / peopleCount;
-  console.log(tip, " ", total);
 
-  tipPerPerson.textContent = tip;
-  totalPerPerson.textContent = total;
+  tipPerPerson.textContent = tip.toFixed(2);
+  totalPerPerson.textContent = total.toFixed(2);
 };
 
 tipButtons.forEach((tipBtn) => {
@@ -88,18 +90,46 @@ tipButtons.forEach((tipBtn) => {
 });
 
 billInput.addEventListener("input", () => {
-  billValue = parseFloat(billInput.value) || 0;
-  calculate();
+  if (billInput.value <= 0) {
+    billError.classList.remove("bill__error--hidden");
+    billError.textContent = "Can't be zero or negative";
+    billInput.classList.add("bill__input--error");
+    return;
+  } else {
+    billInput.classList.remove("bill__input--error");
+    billError.classList.add("bill__error--hidden");
+    billValue = parseFloat(billInput.value) || 0;
+    calculate();
+  }
 });
 
 peopleInput.addEventListener("input", () => {
   peopleCount = parseFloat(peopleInput.value) || 0;
+
+  if (peopleInput.value <= 0) {
+    peopleError.classList.remove("people__error--hidden");
+    peopleError.textContent = "Can't be zero or negative";
+    peopleInput.classList.add("people__input--error");
+    return;
+  } else {
+    peopleInput.classList.remove("people__input--error");
+    peopleError.classList.add("people__error--hidden");
+  }
   calculate();
 });
 
 tipInput.addEventListener("input", () => {
-  tipPercentage = parseFloat(tipInput.value) / 100;
-  calculate();
+  if (tipInput.value <= 0) {
+    tipError.classList.remove("tip__error--hidden");
+    tipError.textContent = "Can't be zero or negative";
+    tipInput.classList.add("tip__input--error");
+    return;
+  } else {
+    tipInput.classList.remove("tip__input--error");
+    tipError.classList.add("tip__error--hidden");
+    tipPercentage = parseFloat(tipInput.value) / 100;
+    calculate();
+  }
 });
 
 resetButton.addEventListener("click", () => {

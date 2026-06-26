@@ -44,19 +44,23 @@
 
 .bill {
   &__group {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+      "label-bill error-bill"
+      "input-bill input-bill";
     gap: v.$spacing-100;
   }
 
   &__label {
     @include v.text-preset-5;
     color: v.$grey-500;
+    grid-area: label-bill;
   }
 
   &__group-input {
     position: relative;
     width: 100%;
+    grid-area: input-bill;
   }
 
   &__input-symbol {
@@ -79,6 +83,22 @@
     &:focus {
       outline: none;
       border: 3px solid v.$green-400;
+    }
+
+    &--error {
+      border: 3px solid v.$orange-400;
+    }
+  }
+
+  &__error {
+    @include v.text-preset-5;
+    color: v.$orange-400;
+    grid-area: error-people;
+    justify-self: end;
+    grid-area: error-bill;
+
+    &--hidden {
+      display: none;
     }
   }
 }
@@ -130,10 +150,11 @@
   }
 
   &__group {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: v.$spacing-100;
-    grid-column: 1 / span 2;
+    grid-template-areas:
+      "label-tip error-tip"
+      "input-tip input-tip";
 
     @media screen and (min-width: 48rem) {
       grid-column: 1 / span 3;
@@ -147,11 +168,13 @@
   &__label {
     @include v.text-preset-5;
     color: v.$grey-500;
+    grid-area: label-tip;
   }
 
   &__group-input {
     position: relative;
     width: 100%;
+    grid-area: input-tip;
   }
 
   &__input {
@@ -178,6 +201,10 @@
     &[type="number"] {
       -moz-appearance: textfield;
     }
+
+    &--error {
+      border: 3px solid v.$orange-400;
+    }
   }
 
   &__input-percent {
@@ -188,24 +215,39 @@
     @include v.text-preset-3;
     color: v.$green-900;
   }
+
+  &__error {
+    @include v.text-preset-5;
+    color: v.$orange-400;
+    grid-area: error-tip;
+    justify-self: end;
+
+    &--hidden {
+      display: none;
+    }
+  }
 }
 
 .people {
   &__group {
     margin-top: v.$spacing-400;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+      "label-people error-people"
+      "input-people input-people";
     gap: v.$spacing-100;
   }
 
   &__label {
     @include v.text-preset-5;
     color: v.$grey-500;
+    grid-area: label-people;
   }
 
   &__group-input {
     position: relative;
     width: 100%;
+    grid-area: input-people;
   }
 
   &__input-symbol {
@@ -233,6 +275,17 @@
     &:invalid {
       outline: none;
       border: 3px solid v.$orange-400;
+    }
+  }
+
+  &__error {
+    @include v.text-preset-5;
+    color: v.$orange-400;
+    grid-area: error-people;
+    text-align: right;
+
+    &--hidden {
+      display: none;
     }
   }
 }
