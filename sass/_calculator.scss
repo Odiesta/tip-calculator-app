@@ -46,9 +46,6 @@
 }
 
 .tip {
-  &__container {
-  }
-
   &__text {
     @include v.text-preset-5;
     color: v.$grey-500;
