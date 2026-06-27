@@ -28,6 +28,13 @@ const calculate = () => {
   totalPerPerson.textContent = `$${total.toFixed(2)}`;
 };
 
+const validateInput = (input, errorEl, min = 0, prefix = "input") => {
+  const valid = input.value > min;
+  errorEl.classList.toggle(`${prefix}__error--hidden`, valid);
+  input.classList.toggle(`${prefix}__input--error`, !valid);
+  return valid;
+};
+
 tipButtons.forEach((tipBtn) => {
   tipBtn.addEventListener("click", () => {
     tipButtons.forEach((btn) => {
@@ -50,13 +57,6 @@ tipButtons.forEach((tipBtn) => {
     calculate();
   });
 });
-
-const validateInput = (input, errorEl, min = 0, prefix = "input") => {
-  const valid = input.value > min;
-  errorEl.classList.toggle(`${prefix}__error--hidden`, valid);
-  input.classList.toggle(`${prefix}__input--error`, !valid);
-  return valid;
-};
 
 billInput.addEventListener("input", () => {
   const valid = validateInput(billInput, billError);
@@ -105,7 +105,7 @@ resetButton.addEventListener("click", () => {
   tipInput.value = 0;
   tipButtons.forEach((btn) => {
     btn.classList.remove("button--active");
-    if (btn.textContent === "15%") {
+    if (btn.getAttribute("text") === "15%") {
       btn.classList.add("button--active");
     }
   });
