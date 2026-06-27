@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontendmentor](https://www.frontendmentor.io/solutions/tip-calculator-with-sass-web-component-EqL7gPYuRK)
+- Live Site URL: [Netlify](https://lighthearted-panda-5d79a8.netlify.app/)
 
 ## My process
 
