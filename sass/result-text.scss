@@ -9,6 +9,7 @@
   &__text {
     @include v.text-preset-5;
     color: v.$white;
+    margin: auto 0;
 
     &--sub {
       color: v.$grey-400;
