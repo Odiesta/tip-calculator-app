@@ -45,6 +45,11 @@
 
     &--error {
       border: 3px solid v.$orange-400;
+
+      &:focus {
+        border: 3px solid v.$orange-400;
+        outline: none;
+      }
     }
   }
 

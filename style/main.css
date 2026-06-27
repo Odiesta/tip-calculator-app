@@ -122,6 +122,10 @@ body {
 .input__input--error {
   border: 3px solid #e17052;
 }
+.input__input--error:focus {
+  border: 3px solid #e17052;
+  outline: none;
+}
 .input__error {
   font-family: "Space Mono", monospace;
   font-size: 1.6rem;
@@ -225,6 +229,10 @@ tip-input {
 }
 .tip__input--error {
   border: 3px solid #e17052;
+}
+.tip__input--error:focus {
+  border: 3px solid #e17052;
+  outline: none;
 }
 .tip__input-percent {
   position: absolute;
