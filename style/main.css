@@ -136,11 +136,6 @@ body {
   display: none;
 }
 
-.result__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
 .result__text-wrapper {
   display: flex;
   justify-content: space-between;
@@ -170,27 +165,6 @@ body {
     font-weight: bold;
     letter-spacing: -1px;
   }
-}
-.result__button-container {
-  margin-top: 3.2rem;
-}
-.result__button {
-  font-family: "Space Mono", monospace;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 0;
-  width: 100%;
-  padding: 0.8rem;
-  background-color: #26c2ae;
-  color: #00474b;
-  border: none;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.result__button:hover {
-  background-color: #9fe8df;
-  color: #00474b;
 }
 
 tip-input {

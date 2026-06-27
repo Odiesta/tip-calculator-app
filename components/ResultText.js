@@ -3,7 +3,7 @@ class ResultText extends HTMLElement {
     const title = this.getAttribute("title") || "";
     const text = this.getAttribute("text") || "";
     const value = this.getAttribute("value") || "0";
-    const valueId = this.getAttribute("id") || "";
+    const valueId = this.getAttribute("value-id") || "";
     this.innerHTML = `
     <div class="result__text-wrapper">
       <p class="result__text">

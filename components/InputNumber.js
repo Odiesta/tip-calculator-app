@@ -7,7 +7,7 @@ class InputNumber extends HTMLElement {
     const customClass = this.getAttribute("class") || "";
     this.innerHTML = `
     <div class="input__group">
-      <label for="input" class="input__label">${text}</label>
+      <label for="${idInput}" class="input__label">${text}</label>
       <div class="input__group-input">
         <img
           src="images/icon-${image}.svg"

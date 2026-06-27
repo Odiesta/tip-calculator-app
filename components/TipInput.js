@@ -6,8 +6,8 @@ class TipInput extends HTMLElement {
     const idGroup = this.getAttribute("idGroup") || "";
     const customClass = this.getAttribute("class") || "";
     this.innerHTML = `
-    <div class="tip__group " id="${idGroup}">
-      <label for="tip__input" class="tip__label">${text}</label>
+    <div class="tip__group tip__group--hidden" id="${idGroup}">
+      <label for="${idInput}" class="tip__label">${text}</label>
       <div class="tip__group-input">
         <input
           type="number"
