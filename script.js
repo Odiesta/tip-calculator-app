@@ -28,7 +28,13 @@ const calculate = () => {
   totalPerPerson.textContent = `$${total.toFixed(2)}`;
 };
 
-const validateInput = (input, errorEl, min = 0, prefix = "input") => {
+const validateInput = (
+  input,
+  errorEl,
+  min = 0,
+  operator = "<",
+  prefix = "input",
+) => {
   const valid = input.value > min;
   errorEl.classList.toggle(`${prefix}__error--hidden`, valid);
   input.classList.toggle(`${prefix}__input--error`, !valid);
@@ -61,7 +67,7 @@ tipButtons.forEach((tipBtn) => {
 billInput.addEventListener("input", () => {
   const valid = validateInput(billInput, billError);
   if (!valid) {
-    billError.textContent = "Can't be zero negative";
+    billError.textContent = "Can't be zero or negative";
     billValue = 0;
   } else {
     billValue = parseFloat(billInput.value) || 0;
@@ -85,11 +91,13 @@ tipInput.addEventListener("input", () => {
 
   if (tipInput.value === "" || isNaN(value) || value < 0) {
     tipError.textContent = "Can't be negative";
-    validateInput(tipInput, tipError, 0, "tip");
+    tipError.classList.remove("tip__error--hidden");
+    tipInput.classList.add("tip__input--error");
     return;
   } else {
     tipPercentage = value / 100;
-    validateInput(tipInput, tipError, 0, "tip");
+    tipError.classList.add("tip__error--hidden");
+    tipInput.classList.remove("tip__input--error");
     calculate();
   }
 });

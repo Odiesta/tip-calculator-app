@@ -23,7 +23,7 @@ class InputNumber extends HTMLElement {
         />
       </div>
       <span class="input__error input__error--hidden" id="${idError}"
-        >Can't be zero</span
+        ></span
       >
     </div>
     `;

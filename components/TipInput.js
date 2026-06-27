@@ -19,7 +19,7 @@ class TipInput extends HTMLElement {
         <span class="tip__input-percent">%</span>
       </div>
       <span class="tip__error tip__error--hidden" id="${idError}"
-        >Can't be Negative</span
+        ></span
       >
     </div>
     `;
