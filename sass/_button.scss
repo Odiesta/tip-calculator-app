@@ -1,0 +1,44 @@
+@use "variables" as v;
+
+.button {
+  @include v.text-preset-3;
+  background-color: v.$green-900;
+  color: v.$white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: v.$spacing-100;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    background-color: v.$green-400;
+    color: v.$green-900;
+  }
+
+  &--custom {
+    background-color: v.$grey-50;
+    color: v.$grey-550;
+  }
+
+  &--active {
+    background-color: v.$green-400;
+    color: v.$green-900;
+  }
+
+  &--result {
+    @include v.text-preset-4;
+    width: 100%;
+    padding: v.$spacing-100;
+    background-color: v.$green-400;
+    color: v.$green-900;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: v.$green-200;
+      color: v.$green-900;
+    }
+  }
+}

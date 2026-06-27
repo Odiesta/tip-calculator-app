@@ -1,0 +1,62 @@
+@use "variables" as v;
+
+.input {
+  &__group {
+    display: grid;
+    grid-template-areas:
+      "label-custom error-custom"
+      "input-custom input-custom";
+    gap: v.$spacing-100;
+  }
+
+  &__label {
+    @include v.text-preset-5;
+    color: v.$grey-500;
+    grid-area: label-custom;
+  }
+
+  &__group-input {
+    position: relative;
+    width: 100%;
+    grid-area: input-custom;
+  }
+
+  &__input-symbol {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__input {
+    @include v.text-preset-3;
+    background-color: v.$grey-50;
+    border: 3px solid transparent;
+    padding: v.$spacing-100;
+    width: 100%;
+    text-align: right;
+    color: v.$green-900;
+    border-radius: 0.5rem;
+
+    &:focus {
+      outline: none;
+      border: 3px solid v.$green-400;
+    }
+
+    &--error {
+      border: 3px solid v.$orange-400;
+    }
+  }
+
+  &__error {
+    @include v.text-preset-5;
+    color: v.$orange-400;
+    grid-area: error-people;
+    justify-self: end;
+    grid-area: error-custom;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

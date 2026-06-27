@@ -29,91 +29,60 @@
 
       <div class="calculator">
         <div class="calculator__bill-container">
-          <div class="bill__group">
-            <label for="bill" class="bill__label">Bill</label>
-            <div class="bill__group-input">
-              <img
-                src="images/icon-dollar.svg"
-                alt="Icon dollar"
-                class="bill__input-symbol"
-              />
-              <input
-                type="number"
-                name="bill"
-                class="bill__input"
-                placeholder="0"
-                id="bill__input"
-              />
-            </div>
-            <span class="bill__error bill__error--hidden" id="bill__error"
-              >Can't be zero</span
-            >
-          </div>
+          <input-number
+            text="Bill"
+            idInput="billInput"
+            idError="billError"
+            image="dollar"
+          ></input-number>
           <div class="tip__container">
             <p class="tip__text">Select Tip %</p>
             <div class="tip__options">
-              <button class="tip__button">5%</button>
-              <button class="tip__button">10%</button>
-              <button class="tip__button tip__button--active">15%</button>
-              <button class="tip__button">25%</button>
-              <button class="tip__button">50%</button>
-              <button class="tip__button tip__button--custom">Custom</button>
-              <div class="tip__group tip__group--hidden" id="tip__group">
-                <label for="tip__input" class="tip__label">Number of tip</label>
-                <div class="tip__group-input">
-                  <input
-                    type="number"
-                    name="tip"
-                    class="tip__input"
-                    placeholder="0"
-                    id="tip__input"
-                  />
-                  <span class="tip__input-percent">%</span>
-                </div>
-                <span class="tip__error tip__error--hidden" id="tip__error"
-                  >Can't be Negative</span
-                >
-              </div>
+              <button-custom text="5%"></button-custom>
+              <button-custom text="10%"></button-custom>
+              <button-custom text="15%" class="active"></button-custom>
+              <button-custom text="25%"></button-custom>
+              <button-custom text="50%"></button-custom>
+              <button-custom
+                text="Custom"
+                class="button--custom"
+              ></button-custom>
+              <tip-input
+                text="Number of tip"
+                idGroup="tip__group"
+                idInput="tip__input"
+                idError="tip__error"
+              ></tip-input>
             </div>
           </div>
-          <div class="people__group">
-            <label for="people" class="people__label">Number of People</label>
-            <div class="people__group-input">
-              <img
-                src="images/icon-person.svg"
-                alt="Icon person"
-                class="people__input-symbol"
-              />
-              <input
-                type="number"
-                name="people"
-                class="people__input"
-                placeholder="0"
-                id="people__input"
-              />
-            </div>
-            <span class="people__error people__error--hidden" id="people__error"
-              >Can't be zero</span
-            >
-          </div>
+          <input-number
+            text="Number of People"
+            idInput="peopleInput"
+            idError="peopleError"
+            image="person"
+          ></input-number>
         </div>
         <div class="calculator__result-container">
           <div class="result__wrapper">
-            <div class="result__text-wrapper">
-              <p class="result__text">
-                Tip Amount <span class="result__text--sub">/ person</span>
-              </p>
-              <p class="result__value" id="tipPerPerson">$4.27</p>
-            </div>
-            <div class="result__text-wrapper">
-              <p class="result__text">
-                Total <span class="result__text--sub">/ person</span>
-              </p>
-              <p class="result__value" id="totalPerPerson">$32.79</p>
-            </div>
+            <result-text
+              title="Tip Amount"
+              text="/ person"
+              value="4.27"
+              id="tipPerPerson"
+            ></result-text>
+            <result-text
+              title="Total"
+              text="/ person"
+              value="32.79"
+              id="totalPerPerson"
+            ></result-text>
           </div>
           <div class="result__button-container">
-            <button class="result__button" id="reset__button">Reset</button>
+            <button-custom
+              text="Reset"
+              class="button--result"
+              id="reset-button"
+            ></button-custom>
           </div>
         </div>
       </div>
@@ -125,6 +94,10 @@
       Coded by <a href="#">Your Name Here</a>.
     </footer> -->
 
+    <script src="components/Button.js"></script>
+    <script src="components/InputNumber.js"></script>
+    <script src="components/TipInput.js"></script>
+    <script src="components/ResultText.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
